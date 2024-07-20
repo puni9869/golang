@@ -2,14 +2,20 @@ package main
 
 import "fmt"
 
-func factorial(token int) int {
-	if token < 2 {
+func triangle(row int) int {
+	if row == 0 {
+		return 0
+	}
+	if row == 1 {
 		return 1
 	}
-	return token * factorial(token-1)
+	if row == 2 {
+		return 3
+	}
+	return row + triangle(row-1)
 }
 
 func main() {
-	fact := factorial(5)
+	fact := triangle(5)
 	fmt.Println(fact)
 }
