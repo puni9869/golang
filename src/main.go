@@ -2,14 +2,14 @@ package main
 
 import "fmt"
 
-func recur(token int) {
-	if token < 1 {
-		return
+func factorial(token int) int {
+	if token < 2 {
+		return 1
 	}
-	fmt.Println(token, token%2 == 0)
-	token--
-	recur(token)
+	return token * factorial(token-1)
 }
+
 func main() {
-	recur(5)
+	fact := factorial(5)
+	fmt.Println(fact)
 }
